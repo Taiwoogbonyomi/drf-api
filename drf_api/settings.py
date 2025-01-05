@@ -65,7 +65,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net', 'ALLOWED_HOST']
+ALLOWED_HOSTS = [('ALLOWED_HOST'),'8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net']
 
