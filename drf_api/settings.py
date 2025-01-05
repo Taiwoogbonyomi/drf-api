@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import re
 
 if os.path.exists('env.py'):
     import env
@@ -64,7 +65,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net', 'taiwo-drf-api-cbaa09a98259.herokuapp.com']
+ALLOWED_HOSTS = ['8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net', 'ALLOWED_HOST']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net']
 
@@ -111,14 +112,10 @@ MIDDLEWARE = [
     
 ]
 
-if 'CLIENT_ORIGIN' in os.environ:
-     CORS_ALLOWED_ORIGINS = [
-         os.environ.get('CLIENT_ORIGIN')
-     ]
-else:
-     CORS_ALLOWED_ORIGIN_REGEXES = [
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https:\/\/.*\.codeinstitute-ide\.net$",
-     ]
+    ]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_api.urls'
