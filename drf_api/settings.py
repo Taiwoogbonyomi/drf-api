@@ -65,9 +65,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = [ os.environ.get('ALLOWED_HOST'),'8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST', 'localhost'),'8000-taiwoogbonyomi-drfapi-4vjpy10maiy.ws.codeinstitute-ide.net']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-taiwoogbonyomi-drfapi-8abylz6pu9u.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://8000-taiwoogbonyomi-drfapi-4vjpy10maiy.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -109,6 +109,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
     
 ]
 
